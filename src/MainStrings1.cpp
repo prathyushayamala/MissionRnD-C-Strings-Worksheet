@@ -16,7 +16,8 @@ Objectives of Strings-1 Lesson:
 #include "FunctionHeadersStrings1.h"
 
 int main(){
-
+	char str[] = "12 w 2e     we  2 3     ";
+	removeSpaces(str);
 	//Test KthIndexFromEnd 
 
 	//TestNumbertoStr
