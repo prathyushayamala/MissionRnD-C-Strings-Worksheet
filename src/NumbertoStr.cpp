@@ -36,18 +36,18 @@ void number_to_str(float number, char *str, int afterdecimal){
 		temp = (int)number;
 		float_num = number - temp;
 		i = 0;
-		while (temp != 0){
-			str[i] = (temp % 10) + '0';
+		while (temp != 0){//storing the integer part of the float number in reverse
+			str[len-1-i] = (temp % 10) + '0';
 			temp = temp / 10;
 			i++;
 		}
-			for (i = 0; i < len / 2 + 1; i++){
+			for (i = 0; i < len / 2 + 1; i++){//rearranging the number which is in reverse form
 				temp = str[i];
 				str[i] = str[len - 1 - i];
 				str[len - 1 - i] = temp;
 			}
 			str[i + 1] = '\0';
-			if (float_num != 0){
+			if (float_num != 0){//storing the float part of the float number
 				str[i + 1] = '.';
 				for (j = i + 2; j <=i + afterdecimal + 1; j++)
 				{
@@ -65,25 +65,20 @@ void number_to_str(float number, char *str, int afterdecimal){
 	i++;
 	}
 	int len = i;
-		str[0] = '-';
+		str[0] = '-';//for negative number
 		float_num = number -(int)number;
 		i = 0;
 		temp = -(int)number;
-		while ((temp != 0)&&(i<len)){
+		while ((temp != 0)&&(i<len)){//storing the integer part of the float number
 			str[len-i] = (temp % 10) + '0';
 			temp = temp / 10;
 			i++;
 		}
-		/*for (i = 1; i <= len / 2 + 1; i++){
-			temp = str[i];
-			str[i] = str[len - i];
-			str[len - 1 - i] = temp;
-		}*/
 		str[i+1] = '\0';
 		if (float_num != 0){
 			str[i + 1] = '.';
 			float_num = -float_num;
-			for (j = i + 2; j <= i + afterdecimal + 1; j++)
+			for (j = i + 2; j <= i + afterdecimal + 1; j++)//storing the float part of the float number
 			{
 				float_num = float_num * 10;
 				str[j] = (int)(float_num)+'0';
