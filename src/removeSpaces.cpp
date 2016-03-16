@@ -11,7 +11,7 @@ ERROR CASES: Return '\0' for invalid inputs.
 NOTES: Don't create new string.
 */
 #include<stdio.h>
-char* remove_space(char *str, int index){
+char* remove_space(char *str, int index){//to do left shift of the string by one unit
 	int j = index+1;
 	while (str[j] != '\0'){
 		str[j - 1] = str[j];
@@ -25,11 +25,11 @@ char removeSpaces(char *str) {
 		return '\0';
 	}
 	else{
-		while (str[len] != '\0'){
+		while (str[len] != '\0'){//calculating the length of the string
 			len++;
 		}
 
-		while (str[i] != '\0'){
+		while (str[i] != '\0'){//finding the space and calling function to remove it
 			if (str[i] == ' '){
 				str = remove_space(str, i);
 				str[len--] = '\0';
