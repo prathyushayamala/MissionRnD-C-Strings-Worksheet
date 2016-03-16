@@ -11,6 +11,7 @@ NOTES: Don't create new string.
 */
 #include <Stdio.h>
 #include <string.h>
+//to reverse the word
 char* reverse_word(char *input, int space_index){
 	int i = space_index+1,j,word_len;
 	char temp;
@@ -37,6 +38,7 @@ char* reverse_word(char *input, int space_index){
 	}
 	return input;
 }
+//to reverse the whole string
 char* reverse_string(char* input,int len){
 	int i = 0;
 	char temp;
@@ -51,7 +53,7 @@ void str_words_in_rev(char *input, int len){
 	int i = 0, j = 0,no_of_spaces=0,space_index=0;
 	while (input[i] != '\0'){
 		if ((input[i] == ' ')&&((input[i+1]!=' ')||(space_index==0))||(input[i+1]=='\0')){
-			input = reverse_word(input, space_index);
+			input = reverse_word(input, space_index);//to reverse the word in the string
 			space_index = i;
 			no_of_spaces++;
 		}
