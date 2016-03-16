@@ -16,8 +16,10 @@ Objectives of Strings-1 Lesson:
 #include "FunctionHeadersStrings1.h"
 
 int main(){
-	char input[100] = "missionrnd is great";
-	str_words_in_rev(input, 19);
+	char *str1 = "the are all is well";
+	char *str2 = "is who the";
+	char expected[2][31] = { { "the" }, { "is" } };
+	char **res = commonWords(str1, str2);
 	//Test KthIndexFromEnd 
 
 	//TestNumbertoStr
