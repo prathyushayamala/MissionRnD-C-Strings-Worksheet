@@ -16,7 +16,8 @@ NOTES: If there are no common words return NULL.
 #include <malloc.h>
 
 #define SIZE 31
-char** compare(char** words_in_str1, char** words_in_str2,char** res,int no_of_words_in_str1,int no_of_words_in_str2){
+//comparision of given two strings and returning the common word to the result array
+ char** compare(char** words_in_str1, char** words_in_str2,char** res,int no_of_words_in_str1,int no_of_words_in_str2){
 	int i = 0, j = 0,k=0,l=0,common_words_count=0;
 	for (i = 0; i <= no_of_words_in_str1; i++){
 		for (j = 0; j <= no_of_words_in_str2; j++){
@@ -49,7 +50,7 @@ char ** commonWords(char *str1, char *str2) {
 		return NULL;
 	}
 	else{
-		while (str1[i] != '\0'){
+		while (str1[i] != '\0'){//calculating number of words in the first string
 			if (str1[i] == ' '){
 				no_of_words_in_str1++;
 			}
@@ -57,7 +58,7 @@ char ** commonWords(char *str1, char *str2) {
 		}
 		len1 = i;
 		i = 0;
-		while (str2[i] != '\0'){
+		while (str2[i] != '\0'){//calculating number of words in the second string
 			if (str2[i] == ' '){
 				no_of_words_in_str2++;
 			}
@@ -103,6 +104,7 @@ char ** commonWords(char *str1, char *str2) {
 		}
 		i++;
 	}
+	//sufficient allocation of the memory to result
 	if (no_of_words_in_str1 >= no_of_words_in_str2){
 		if (len1 > len2){
 			res = (char**)malloc(len1*sizeof(char));
